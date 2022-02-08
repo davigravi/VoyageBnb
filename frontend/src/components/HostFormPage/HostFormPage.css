@@ -1,0 +1,19 @@
+.host-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.host-page-description{
+    height: 75px;
+}
+
+input:nth-child(1) {
+    width: 300px;
+    padding:5px;
+    margin-bottom: 10px;
+}
+
+textarea{
+    margin-bottom:10px;
+}
