@@ -19,22 +19,31 @@ function Listings (){
 
 
     return (
-        <div className='listings-container'>
+        <div>
             <h2> Listings</h2>
+            <div className='listings-container'>
                 {listings.map((listing)=>
-                <div key={listing.id} id={listing.id}>
+                <div className="listing-content" key={listing.id} id={listing.id}>
                     <h3>{listing.name}</h3>
                     <ul>
-                        <li>{listing.description}</li>
-                        <li>{listing.address}</li>
-                        <li>{listing.city}</li>
-                        <li>{listing.state}</li>
-                        <li>{listing.zipcode}</li>
-                        <li>{listing.pricePerNight}</li>
+                        <div>Description</div>
+                        <li className="description-box">{listing.description}</li>
+                        <div>Location</div>
+                        <div className="location-box">
+                            <li>{listing.address}</li>
+                            <li>{listing.city}</li>
+                            <li>{listing.state}</li>
+                            <li>{listing.zipcode}</li>
+                        </div>
+                        <div>Price</div>
+                        <div className="price-box">
+                            <li>${listing.pricePerNight}</li>
+                        </div>
                     </ul>
                     <img  src={`${listing.url}`}></img>
                 </div>
                 )}
+            </div>
         </div>
     )
 
