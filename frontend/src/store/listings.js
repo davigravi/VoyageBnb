@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const LOAD = 'listings/LOAD';
 const ADD_ONE = 'listings/ADD_ONE';
+const DELETE_ONE = "listings/DELETE_ONE"
 
 const load = list =>({
     type: LOAD,
@@ -11,6 +12,11 @@ const load = list =>({
 const addListing = listing => ({
     type: ADD_ONE,
     listing,
+});
+
+const deleteListing = id => ({
+    type: DELETE_ONE,
+    id,
 });
 
 export const loadListings = () => async dispatch =>{
@@ -37,6 +43,22 @@ export const createListing = (payload) => async dispatch => {
     }
 };
 
+export const removeListing = (listingId) => async dispatch => {
+    console.log(listingId, "listingId")
+    const response = await csrfFetch(`/api/listings/${listingId}`,{
+        method:'DELETE',
+    })
+    console.log("checkpoint2")
+    if (response.ok){
+        const id = await response.json();
+        dispatch(deleteListing(id));
+        return id;
+    }
+}
+
+
+
+
 const initialState = {
     list: []
 };
@@ -59,6 +81,11 @@ const listingsReducer = (state = initialState, action)=> {
                 ...state,
                 [action.listing.id]: action.listing,
             };
+        }
+        case DELETE_ONE: {
+            const newState = { ...state };
+            delete newState[action.roomId];
+            return newState;
         }
         default:
             return state;

@@ -13,9 +13,24 @@ router.get('/', asyncHandler(async function (req, res) {
 );
 
 
-router.post("/", asyncHandler(async function (req, res){
+router.post("/", asyncHandler(async function (req, res) {
     const newListing = await db.Listing.create(req.body);
     return res.json(newListing);
 }));
+
+
+router.delete("/:id", asyncHandler(async function (req, res) {
+    console.log("in back end")
+    const id = req.params.id;
+    const listing = await db.Listing.findByPk(req.params.id);
+
+    if(!listing){
+        throw new Error('Unable to delete spot')
+    };
+
+    await listing.destroy();
+    return res.json(id);
+}))
+
 
 module.exports = router;

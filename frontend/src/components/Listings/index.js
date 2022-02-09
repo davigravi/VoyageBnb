@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './Listings.css';
 import { loadListings } from "../../store/listings";
-
+import { removeListing } from "../../store/listings";
 
 
 
@@ -11,7 +11,10 @@ function Listings () {
 
     const listings = useSelector(state=>state.listings.list);
 
-
+    const handleDelete = async (e) =>{
+        e.preventDefault();
+        dispatch(removeListing(e.target.value))
+    }
 
     useEffect(()=>{
         dispatch(loadListings());
@@ -41,9 +44,9 @@ function Listings () {
                         </div>
                         <div className="listings-buttons-container">
                             <div className="listings-buttons-box">
-                                <button>Book</button>
-                                <button>Delete</button>
-                                <button>Edit</button>
+                                <button className="book-button">Book</button>
+                                <button value={listing.id} onClick={handleDelete}>Delete</button>
+                                <button className="edit-button">Edit</button>
                             </div>
                         </div>
                     </ul>
