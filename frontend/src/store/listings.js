@@ -48,8 +48,8 @@ export const removeListing = (listingId) => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`,{
         method:'DELETE',
     })
-    console.log("checkpoint2")
     if (response.ok){
+        console.log("checkpoint2")
         const id = await response.json();
         dispatch(deleteListing(+id));
         return id;
