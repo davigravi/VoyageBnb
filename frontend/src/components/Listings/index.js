@@ -9,7 +9,9 @@ import { removeListing } from "../../store/listings";
 function Listings () {
     const dispatch = useDispatch();
 
+    // const listings = useSelector(state=>state.listings.list);
     const listings = useSelector(state=>state.listings.list);
+    console.log(listings)
 
     const handleDelete = async (e) =>{
         e.preventDefault();

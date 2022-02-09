@@ -63,6 +63,8 @@ const initialState = {
     list: []
 };
 
+
+
 const listingsReducer = (state = initialState, action)=> {
     switch (action.type) {
         case LOAD: {
@@ -83,9 +85,14 @@ const listingsReducer = (state = initialState, action)=> {
             };
         }
         case DELETE_ONE: {
-            const newState = { ...state };
-            delete newState[action.roomId];
+            const newState ={...state, list: state.list.filter(listing => listing.id !== action.id)}
+            console.log(newState, "newState after deletion")
             return newState;
+            // const newState = { ...state };
+            // console.log(newState, "this is newState")
+            // delete newState.list[action.id];
+            // console.log(newState,"after deletion")
+            // return newState;
         }
         default:
             return state;
