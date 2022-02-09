@@ -13,6 +13,9 @@ router.get('/', asyncHandler(async function (req, res) {
 );
 
 
-
+router.post("/", asyncHandler(async function (req, res){
+    const newListing = await db.Listing.create(req.body);
+    return res.json(newListing);
+}));
 
 module.exports = router;

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import './HostFormPage.css'
 import { useHistory } from "react-router-dom";
+import { createListing } from "../../store/listings";
 
 
 
@@ -9,6 +10,8 @@ function HostFormPage(){
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const sessionUser = useSelector((state) => state.session.user);
 
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
@@ -20,8 +23,33 @@ function HostFormPage(){
     const [url, setUrl] = useState("");
     const [errors, setErrors] = useState([]);
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const payload = {
+            userId: sessionUser.id,
+            name,
+            address,
+            city,
+            state,
+            zipcode,
+            description,
+            pricePerNight,
+            url,
+        }
+
+        let newListing = await dispatch(createListing(payload));
+
+        if(newListing){
+            history.push("/listings")
+        }
+
+
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <ul className="host-errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
@@ -72,13 +100,12 @@ function HostFormPage(){
                     required
                     />
                 </label>
-                    <input
-                    className="host-page-description"
-                    type="text"
-                    value={description}
+                    <textarea
+                    rows="5"
+                    cols="38"
                     placeholder="Description"
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
+                    value={description}
+                    onChange={(e)=> setDescription(e.target.value)}
                     />
                 <label>
                     <input

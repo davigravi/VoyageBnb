@@ -7,6 +7,8 @@
     width: 40%;
     margin:0 auto;
     text-align: center;
+    border: 2px solid black;
+    padding-bottom: 15px;
 }
 
 
@@ -14,6 +16,9 @@
     width:35%;
     margin: 0 auto;
     border: 2px black solid;
+    position: relative;
+    right: 19px;
+
 }
 
 
@@ -21,14 +26,41 @@
     border: 2px black solid;
     width:35%;
     margin:0 auto;
+    position: relative;
+    right: 19px;
 }
 
 .price-box{
     border: 2px black solid;
     width:35%;
     margin:0 auto;
+    position: relative;
+    right: 19px;
+}
+
+.description-label,
+.location-label,
+.price-label{
+    position: relative;
+    right: 19px;
 }
 
 ul{
     list-style: none;
+}
+
+.listings-page-img{
+    width: 35%;
+}
+
+.listings-buttons-container{
+    display:flex;
+    justify-content: center;
+}
+
+.listings-buttons-box{
+    position: relative;
+    right: 19px;
+    padding-top:15px;
+
 }
