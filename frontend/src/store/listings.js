@@ -51,7 +51,7 @@ export const removeListing = (listingId) => async dispatch => {
     console.log("checkpoint2")
     if (response.ok){
         const id = await response.json();
-        dispatch(deleteListing(id));
+        dispatch(deleteListing(+id));
         return id;
     }
 }
@@ -85,9 +85,13 @@ const listingsReducer = (state = initialState, action)=> {
             };
         }
         case DELETE_ONE: {
-            const newState ={...state, list: state.list.filter(listing => listing.id !== action.id)}
-            console.log(newState, "newState after deletion")
+            const newState = {...state}
+            const newList = newState.list.filter(listing => listing.id !== action.id)
+            newState.list = newList;
+            delete newState[action.id];
             return newState;
+                // , list: state.list.filter(listing => listing.id !== action.id)}
+            // return newState;
             // const newState = { ...state };
             // console.log(newState, "this is newState")
             // delete newState.list[action.id];

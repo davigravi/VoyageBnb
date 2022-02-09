@@ -14,6 +14,7 @@ function Listings () {
     console.log(listings)
 
     const handleDelete = async (e) =>{
+        const id = e.target.value
         e.preventDefault();
         dispatch(removeListing(e.target.value))
     }

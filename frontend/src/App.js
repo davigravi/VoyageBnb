@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Listings from "./components/Listings";
 import HostFormPage from "./components/HostFormPage";
+import Bookings from "./components/Bookings";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/listings">
             <Listings/>
+          </Route>
+          <Route path="/bookings">
+            <Bookings/>
           </Route>
         </Switch>
       )}
