@@ -5,16 +5,17 @@ import './EditForm.css'
 import {useParams} from 'react-router-dom';
 import { updateListing } from "../../store/listings";
 
-function EditForm(id, hideForm) {
+function EditForm({id, hideForm}) {
     const dispatch = useDispatch();
 
     const listings = useSelector(state=>state.listings.list);
-    const propId= {...id};
-    const listId = propId.id.id;
+    const propId= id.id;
+    console.log(propId, "this is propsId num 2")
+
 
     const sessionUser = useSelector(state => state.session.user);
 
-    const listing = listings.find(listing=> listing.id === +listId);
+    const listing = listings.find(listing=> listing.id === +propId);
 
     const [name, setName] = useState(listing.name);
     const [address, setAddress] = useState(listing.address);
@@ -50,7 +51,7 @@ function EditForm(id, hideForm) {
             url,
         }
 
-        let updatedListing = await dispatch(updateListing(payload,listId))
+        let updatedListing = await dispatch(updateListing(payload,propId))
         if(updatedListing){
             hideForm();
         }

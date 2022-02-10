@@ -122,9 +122,11 @@ const listingsReducer = (state = initialState, action)=> {
         case UPDATE_LISTING: {
             const newState = {...state};
             const index = newState.list.findIndex(listing=>listing.id === action.id);
-            console.log(index,"index");
-            newState[action.id] = action.listing;
-            newState.list[index] = action.listing;
+
+            const newListArray = [...newState.list];
+            newListArray[index] = action.listing;
+            newState.list = newListArray;
+
             return newState;
           }
         default:
