@@ -56,8 +56,7 @@ function EditForm(id) {
 
         let updatedListing = await dispatch(updateListing(payload,listId))
         if(updatedListing){
-            console.log("last")
-            history.push("/listings")
+
         }
 
     }

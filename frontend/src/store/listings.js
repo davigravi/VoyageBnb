@@ -120,10 +120,16 @@ const listingsReducer = (state = initialState, action)=> {
             // return newState;
         }
         case UPDATE_LISTING: {
-            return {
-              ...state,
-              [action.id]: action.listing,
-            };
+            const newState = {...state};
+            const index = newState.list.findIndex(listing=>listing.id === action.id);
+            console.log(index,"index");
+            newState[action.id] = action.listing;
+            newState.list[index] = action.listing;
+            return newState;
+            // return {
+            //   ...state,
+            //   [action.id]: action.listing,
+            // };
           }
         default:
             return state;

@@ -8,8 +8,6 @@ import EditFormModal from "../EditFormModal";
 
 
 function Listings () {
-
-
     const dispatch = useDispatch();
 
     // const listings = useSelector(state=>state.listings.list);

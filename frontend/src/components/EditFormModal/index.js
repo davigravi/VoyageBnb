@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import EditForm from './EditForm';
 import './index.css';
 
-function EditFormModal(id) {
+function EditFormModal(id, hideForm) {
   const [showModal, setShowModal] = useState(false);
 
   return (
