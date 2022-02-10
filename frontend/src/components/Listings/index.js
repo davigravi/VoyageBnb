@@ -12,7 +12,6 @@ function Listings () {
 
     // const listings = useSelector(state=>state.listings.list);
     const listings = useSelector(state=>state.listings.list);
-    console.log(listings)
 
     const handleDelete = async (e) =>{
         const id = e.target.value

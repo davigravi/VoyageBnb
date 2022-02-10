@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const LOAD = 'listings/LOAD';
 const ADD_ONE = 'listings/ADD_ONE';
 const DELETE_ONE = "listings/DELETE_ONE"
+const UPDATE_LISTING = "listings/UPDATE_LISTING"
 
 const load = list =>({
     type: LOAD,
@@ -18,6 +19,11 @@ const deleteListing = id => ({
     type: DELETE_ONE,
     id,
 });
+
+const editListing = (listing) =>({
+    type: UPDATE_LISTING,
+    listing
+})
 
 export const loadListings = () => async dispatch =>{
     const response = await csrfFetch(`/api/listings`);

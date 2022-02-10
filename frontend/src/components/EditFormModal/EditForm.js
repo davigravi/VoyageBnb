@@ -7,6 +7,10 @@ function EditForm() {
     const dispatch = useDispatch();
 
 
+
+    // const list = useSelector(state=>state.listings.list[3]);
+
+
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
