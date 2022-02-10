@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './Listings.css';
 import { loadListings } from "../../store/listings";
 import { removeListing } from "../../store/listings";
+import EditFormModal from "../EditFormModal";
 
 
 
@@ -43,13 +44,13 @@ function Listings () {
                         </div>
                         <div className="price-label">Price</div>
                         <div className="price-box">
-                            <li>${listing.pricePerNight}</li>
+                            <li>{listing.pricePerNight}</li>
                         </div>
                         <div className="listings-buttons-container">
                             <div className="listings-buttons-box">
                                 <button className="book-button">Book</button>
                                 <button value={listing.id} onClick={handleDelete}>Delete</button>
-                                <button className="edit-button">Edit</button>
+                                <EditFormModal/>
                             </div>
                         </div>
                     </ul>
