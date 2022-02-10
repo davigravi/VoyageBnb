@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import './EditForm.css'
 import {useParams} from 'react-router-dom';
 import { updateListing } from "../../store/listings";
-import { useHistory } from "react-router-dom";
 
 function EditForm(id) {
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const listings = useSelector(state=>state.listings.list);
     const propId= {...id};
