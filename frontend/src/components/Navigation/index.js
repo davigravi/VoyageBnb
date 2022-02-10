@@ -13,7 +13,7 @@ function Navigation({ isLoaded }){
       <>
         <NavLink to="/host">Host</NavLink>
         <NavLink to="/listings">Listings</NavLink>
-        <NavLink to="/bookings">My Bookings</NavLink>
+        <NavLink to={`/bookings/${sessionUser.id}`}>My Bookings</NavLink>
         <ProfileButton user={sessionUser} />
 
       </>

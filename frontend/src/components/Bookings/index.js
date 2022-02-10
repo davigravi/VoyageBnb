@@ -7,10 +7,33 @@ function Bookings () {
     const dispatch = useDispatch();
     const bookings = useSelector(state=>state.bookings.bookings);
     const listings = useSelector(state=>state.listings.list);
+    const sessionUser = useSelector(state => state.session.user);
+
+    const myBookings = bookings.filter(booking=> booking.userId === sessionUser.id)
+    
+
+    if (myBookings.length>0){
+        const listIds = [];
+        for (let i = 0; i < myBookings.length; i++){
+            const id = myBookings[i].listId;
+            listIds.push(id);
+        }
+        console.log(listIds, "listids")
+
+        for(let i = 0; i < listIds.length; i++){
+            const id = listIds[i];
+            const myListings = listings.filter(listing=>listing.id === id);
+            console.log(myListings, "this is my listings")
+        }
+
+    }
+
+
+
 
     useEffect(()=>{
         dispatch(loadListings());
-        dispatch(loadBookings());
+        dispatch(loadBookings(sessionUser.id));
     }, [dispatch])
 
     return (
@@ -33,6 +56,10 @@ function Bookings () {
                         <div className="price-label">Price</div>
                         <div className="price-box">
                             <li>{listing.pricePerNight}</li>
+                        </div>
+                        <div className="info-label">Booking Info</div>
+                        <div className="info-box">
+                            <li>{sessionUser.firstName} {sessionUser.lastName}</li>
                         </div>
                         <div className="listings-buttons-container">
                             <div className="listings-buttons-box">

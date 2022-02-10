@@ -3,15 +3,18 @@ import { Modal } from '../../context/Modal';
 import EditForm from './EditForm';
 import './index.css';
 
-function EditFormModal(id, hideForm) {
+function EditFormModal(id) {
   const [showModal, setShowModal] = useState(false);
+  const hideForm = () => {
+    setShowModal(false)
+  }
 
   return (
     <>
       <button className="edit-button" onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditForm id={id}/>
+          <EditForm id={id} hideForm={hideForm} />
         </Modal>
       )}
     </>

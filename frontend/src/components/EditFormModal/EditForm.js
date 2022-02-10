@@ -5,7 +5,7 @@ import './EditForm.css'
 import {useParams} from 'react-router-dom';
 import { updateListing } from "../../store/listings";
 
-function EditForm(id) {
+function EditForm(id, hideForm) {
     const dispatch = useDispatch();
 
     const listings = useSelector(state=>state.listings.list);
@@ -15,8 +15,6 @@ function EditForm(id) {
     const sessionUser = useSelector(state => state.session.user);
 
     const listing = listings.find(listing=> listing.id === +listId);
-
-
 
     const [name, setName] = useState(listing.name);
     const [address, setAddress] = useState(listing.address);
@@ -54,7 +52,7 @@ function EditForm(id) {
 
         let updatedListing = await dispatch(updateListing(payload,listId))
         if(updatedListing){
-
+            hideForm();
         }
 
     }
@@ -63,7 +61,7 @@ function EditForm(id) {
 
     const handleCancelClick = async (e) => {
         e.preventDefault();
-        // hideForm();
+        hideForm();
     };
 
     return (

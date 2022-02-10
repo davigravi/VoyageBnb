@@ -7,8 +7,8 @@ const load = bookings =>({
     bookings,
 });
 
-export const loadBookings = () => async dispatch =>{
-    const response = await csrfFetch(`/api/bookings`);
+export const loadBookings = (userId) => async dispatch =>{
+    const response = await csrfFetch(`/api/bookings/${userId}`);
 
     if (response.ok){
         const bookings = await response.json();
