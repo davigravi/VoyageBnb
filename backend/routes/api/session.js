@@ -42,7 +42,6 @@ router.post(
       const { credential, password } = req.body;
 
       const user = await User.login({ credential, password });
-      console.log("here")
       if (!user) {
         const err = new Error('Login failed');
         err.status = 401;

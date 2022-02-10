@@ -10,7 +10,7 @@ function Bookings () {
     const sessionUser = useSelector(state => state.session.user);
 
     const myBookings = bookings.filter(booking=> booking.userId === sessionUser.id)
-    
+
 
     if (myBookings.length>0){
         const listIds = [];
@@ -18,12 +18,10 @@ function Bookings () {
             const id = myBookings[i].listId;
             listIds.push(id);
         }
-        console.log(listIds, "listids")
 
         for(let i = 0; i < listIds.length; i++){
             const id = listIds[i];
             const myListings = listings.filter(listing=>listing.id === id);
-            console.log(myListings, "this is my listings")
         }
 
     }

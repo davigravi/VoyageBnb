@@ -51,12 +51,10 @@ export const createListing = (payload) => async dispatch => {
 };
 
 export const removeListing = (listingId) => async dispatch => {
-    console.log(listingId, "listingId")
     const response = await csrfFetch(`/api/listings/${listingId}`,{
         method:'DELETE',
     })
     if (response.ok){
-        console.log("checkpoint2")
         const id = await response.json();
         dispatch(deleteListing(+id));
         return id;
@@ -111,13 +109,6 @@ const listingsReducer = (state = initialState, action)=> {
             newState.list = newList;
             delete newState[action.id];
             return newState;
-                // , list: state.list.filter(listing => listing.id !== action.id)}
-            // return newState;
-            // const newState = { ...state };
-            // console.log(newState, "this is newState")
-            // delete newState.list[action.id];
-            // console.log(newState,"after deletion")
-            // return newState;
         }
         case UPDATE_LISTING: {
             const newState = {...state};

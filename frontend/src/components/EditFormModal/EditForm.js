@@ -10,7 +10,6 @@ function EditForm({id, hideForm}) {
 
     const listings = useSelector(state=>state.listings.list);
     const propId= id.id;
-    console.log(propId, "this is propsId num 2")
 
 
     const sessionUser = useSelector(state => state.session.user);

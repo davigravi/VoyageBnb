@@ -20,11 +20,9 @@ router.post("/", asyncHandler(async function (req, res) {
 
 
 router.delete("/:id", asyncHandler(async function (req, res) {
-    console.log("in back end")
     const id = req.params.id;
     const listing = await db.Listing.findByPk(req.params.id);
     const booking = await db.Booking.findOne({where: {listId: `${id}`}})
-    console.log("booking", booking)
 
     if(!listing){
         throw new Error('Unable to delete spot')

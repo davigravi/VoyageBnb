@@ -7,7 +7,6 @@ const router = express.Router();
 
 router.get('/:userId', asyncHandler(async function (req, res) {
     const bookings = await db.Booking.findAll({where: {userId: req.params.userId}});
-    console.log(bookings, "this is bookings")
     return res.json(bookings);
 })
 );
