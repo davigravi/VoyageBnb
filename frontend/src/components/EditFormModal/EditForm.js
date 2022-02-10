@@ -2,23 +2,32 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import './EditForm.css'
+import {useParams} from 'react-router-dom';
+import { updateListing } from "../../store/listings";
+import { useHistory } from "react-router-dom";
 
-function EditForm() {
+function EditForm(id) {
     const dispatch = useDispatch();
+    const history = useHistory();
+
+    const listings = useSelector(state=>state.listings.list);
+    const propId= {...id};
+    const listId = propId.id.id;
+
+    const sessionUser = useSelector(state => state.session.user);
+
+    const listing = listings.find(listing=> listing.id === +listId);
 
 
 
-    // const list = useSelector(state=>state.listings.list[3]);
-
-
-    const [name, setName] = useState("");
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [zipcode, setZipcode] = useState("");
-    const [description, setDescription] = useState("");
-    const [pricePerNight, setPricePerNight] = useState(0);
-    const [url, setUrl] = useState("");
+    const [name, setName] = useState(listing.name);
+    const [address, setAddress] = useState(listing.address);
+    const [city, setCity] = useState(listing.city);
+    const [state, setState] = useState(listing.state);
+    const [zipcode, setZipcode] = useState(listing.zipcode);
+    const [description, setDescription] = useState(listing.description);
+    const [pricePerNight, setPricePerNight] = useState(listing.pricePerNight);
+    const [url, setUrl] = useState(listing.url);
     const [errors, setErrors] = useState([]);
 
     const updateName = (e) => setName(e.target.value);
@@ -32,6 +41,25 @@ function EditForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const payload = {
+            userId: sessionUser.id,
+            name,
+            address,
+            city,
+            state,
+            zipcode,
+            description,
+            pricePerNight,
+            url,
+        }
+
+        let updatedListing = await dispatch(updateListing(payload,listId))
+        if(updatedListing){
+            console.log("last")
+            history.push("/listings")
+        }
+
     }
 
 

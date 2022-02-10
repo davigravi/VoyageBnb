@@ -8,6 +8,8 @@ import EditFormModal from "../EditFormModal";
 
 
 function Listings () {
+
+
     const dispatch = useDispatch();
 
     // const listings = useSelector(state=>state.listings.list);
@@ -49,7 +51,7 @@ function Listings () {
                             <div className="listings-buttons-box">
                                 <button className="book-button">Book</button>
                                 <button value={listing.id} onClick={handleDelete}>Delete</button>
-                                <EditFormModal/>
+                                <EditFormModal id={listing.id}/>
                             </div>
                         </div>
                     </ul>

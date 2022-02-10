@@ -20,9 +20,10 @@ const deleteListing = id => ({
     id,
 });
 
-const editListing = (listing) =>({
+const editListing = (listing, id) =>({
     type: UPDATE_LISTING,
-    listing
+    listing,
+    id,
 })
 
 export const loadListings = () => async dispatch =>{
@@ -59,6 +60,20 @@ export const removeListing = (listingId) => async dispatch => {
         const id = await response.json();
         dispatch(deleteListing(+id));
         return id;
+    }
+};
+
+export const updateListing = (payload, listId) => async dispatch => {
+    const response = await csrfFetch(`/api/listings/${listId}`, {
+        method: 'PUT',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(payload)
+    })
+
+    if(response.ok){
+        const updatedListing = await response.json();
+        dispatch(editListing(updatedListing, listId));
+        return updatedListing;
     }
 }
 
@@ -104,6 +119,12 @@ const listingsReducer = (state = initialState, action)=> {
             // console.log(newState,"after deletion")
             // return newState;
         }
+        case UPDATE_LISTING: {
+            return {
+              ...state,
+              [action.id]: action.listing,
+            };
+          }
         default:
             return state;
     }

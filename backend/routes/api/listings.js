@@ -35,6 +35,41 @@ router.delete("/:id", asyncHandler(async function (req, res) {
     await listing.destroy();
 
     return res.json(id);
+}));
+
+router.put("/:id", asyncHandler(async function (req, res){
+
+
+    const listId = req.params.id;
+    const list = await db.Listing.findByPk(listId)
+
+    const {
+        userId,
+        name,
+        address,
+        city,
+        state,
+        zipcode,
+        description,
+        pricePerNight,
+        url,
+    } = req.body;
+
+    const data = {
+        userId,
+        name,
+        address,
+        city,
+        state,
+        zipcode,
+        description,
+        pricePerNight,
+        url,
+    }
+
+    await list.update(data);
+    return res.json(list);
+
 }))
 
 
