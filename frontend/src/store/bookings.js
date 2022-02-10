@@ -1,6 +1,6 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD = 'listings/LOAD';
+const LOAD = 'bookings/LOAD';
 
 const load = bookings =>({
     type: LOAD,

@@ -126,10 +126,6 @@ const listingsReducer = (state = initialState, action)=> {
             newState[action.id] = action.listing;
             newState.list[index] = action.listing;
             return newState;
-            // return {
-            //   ...state,
-            //   [action.id]: action.listing,
-            // };
           }
         default:
             return state;
