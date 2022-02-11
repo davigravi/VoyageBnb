@@ -1,20 +1,40 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD = 'bookings/LOAD';
+const ADD_ONE = "bookings/ADD_ONE";
 
 const load = (bookings) =>({
     type: LOAD,
     bookings,
 });
 
+const addBooking = (booking) => ({
+    type: ADD_ONE,
+    booking,
+})
+
 export const loadBookings = (userId) => async dispatch =>{
-    console.log("userid", userId)
     const response = await csrfFetch(`/api/bookings/${userId}`);
 
     if (response.ok){
         const bookings = await response.json();
         dispatch(load(bookings));
         return bookings;
+    }
+};
+
+export const createBooking = (payload, userId) => async dispatch => {
+    console.log("here")
+    const response = await csrfFetch(`/api/bookings/${userId}`, {
+        method:`POST`,
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+    })
+
+    if(response.ok){
+        const booking = await response.json();
+        dispatch(addBooking(booking));
+        return booking;
     }
 };
 
@@ -36,12 +56,12 @@ const bookingsReducer = (state = initialState, action)=> {
                 bookings: action.bookings,
             }
         }
-        // case ADD_ONE: {
-        //     return {
-        //         ...state,
-        //         [action.listing.id]: action.listing,
-        //     };
-        // }
+        case ADD_ONE: {
+            return {
+                ...state,
+                [action.booking.id]: action.booking,
+            };
+        }
         default:
             return state;
     }

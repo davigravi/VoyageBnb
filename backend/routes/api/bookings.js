@@ -13,5 +13,9 @@ router.get('/:userId', asyncHandler(async function (req, res) {
 })
 );
 
+router.post("/:userId", asyncHandler(async function (req, res) {
+    const newBooking = await db.Booking.create(req.body);
+    return res.json(newBooking);
+}));
 
 module.exports = router;
