@@ -18,6 +18,34 @@ module.exports = {
         allowNull: false,
         references: {model: "Listings"},
       },
+      name: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      address: {
+        type: Sequelize.STRING(150),
+        allowNull:false,
+      },
+      city: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      state: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      zipcode: {
+        type: Sequelize.STRING(5),
+        allowNull: false,
+      },
+      pricePerNight: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      url: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       startDate: {
         type: Sequelize.DATE,
         allowNull: false,

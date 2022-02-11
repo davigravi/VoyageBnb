@@ -2,12 +2,13 @@ import { csrfFetch } from "./csrf";
 
 const LOAD = 'bookings/LOAD';
 
-const load = bookings =>({
+const load = (bookings) =>({
     type: LOAD,
     bookings,
 });
 
 export const loadBookings = (userId) => async dispatch =>{
+    console.log("userid", userId)
     const response = await csrfFetch(`/api/bookings/${userId}`);
 
     if (response.ok){
@@ -18,7 +19,7 @@ export const loadBookings = (userId) => async dispatch =>{
 };
 
 const initialState = {
-    bookings: []
+    bookings: [],
 };
 
 

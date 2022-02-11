@@ -4,7 +4,7 @@
 }
 
 .listing-content{
-    width: 40%;
+    width: 80%;
     margin:0 auto;
     text-align: center;
     border: 2px solid black;
@@ -71,4 +71,8 @@ ul{
 
 .edit-button{
     margin-left: 10px;
+}
+
+.listings > h2{
+    text-align: center;
 }

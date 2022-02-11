@@ -25,7 +25,7 @@ function Listings () {
 
 
     return (
-        <div>
+        <div className="listings">
             <h2> Listings</h2>
             <div className='listings-container'>
                 {listings.map((listing)=>
@@ -43,7 +43,7 @@ function Listings () {
                         </div>
                         <div className="price-label">Price</div>
                         <div className="price-box">
-                            <li>{listing.pricePerNight}</li>
+                            <li>${listing.pricePerNight}</li>
                         </div>
                         <div className="listings-buttons-container">
                             <div className="listings-buttons-box">
