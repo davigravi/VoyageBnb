@@ -13,6 +13,7 @@ function BookForm ({id, hideForm}){
     const propId= id.id;
 
     const sessionUser = useSelector(state => state.session.user);
+    const bookings = useSelector(state=>state.bookings.bookings);
 
     const listing = listings.find(listing=> listing.id === +propId);
 
@@ -29,30 +30,59 @@ function BookForm ({id, hideForm}){
     const [endDate, setEndDate] = useState("");
     const [errors, setErrors] = useState([]);
 
+    const checkDates = () => {
+        let goodDate = true;
+        const bookingsArr = bookings.filter(booking=>booking.listId === +propId);
+
+        bookingsArr.forEach((booking) => {
+            const start1 = new Date(booking.startDate);
+            const end1 = new Date(booking.endDate);
+            const start2 = new Date(startDate);
+            const end2 = new Date(endDate);
+            if (start2 >= start1 && start2 <= end1) goodDate = false //2 starts in 1
+            if (end2 >= start1 && end2 <= end1) goodDate = false  //2 ends in 1
+            if (start2 <= start1 && end2 >= end1) goodDate = false //1 inside 2
+        });
+        return goodDate;
+    }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const payload = {
-            userId: sessionUser.id,
-            listId:propId,
-            name,
-            address,
-            city,
-            state,
-            zipcode,
-            pricePerNight,
-            url,
-            startDate,
-            endDate,
-        }
-        console.log(id)
-        let newBooking = await dispatch(createBooking(payload, sessionUser.id))
+        if(checkDates()){
 
-        if(newBooking){
-            hideForm();
-            history.push(`/bookings/${sessionUser.id}`)
+            const payload = {
+                userId: sessionUser.id,
+                listId:propId,
+                name,
+                address,
+                city,
+                state,
+                zipcode,
+                pricePerNight,
+                url,
+                startDate,
+                endDate,
+            }
+
+
+            let newBooking = await dispatch(createBooking(payload, sessionUser.id))
+
+            if(newBooking){
+                hideForm();
+                history.push(`/bookings/${sessionUser.id}`)
+            }
+
+
+        }else {
+            let error = [];
+            error.push("Those dates are not available");
+            setErrors(error)
         }
+
+
+
 
 
     };
@@ -66,7 +96,7 @@ function BookForm ({id, hideForm}){
         <form onSubmit={handleSubmit}>
             <div className="edit-form-container">
                 <h1>Make Your Reservation</h1>
-                <ul className="e-errors">
+                <ul className="e-errors-booking">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <label>

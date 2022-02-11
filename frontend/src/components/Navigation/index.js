@@ -11,21 +11,21 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
+      <div className="session-links">
         <NavLink to="/host">Host</NavLink>
         <NavLink to="/listings">Listings</NavLink>
         <NavLink to={`/bookings/${sessionUser.id}`}>My Bookings</NavLink>
         <ProfileButton user={sessionUser} />
 
-      </>
+      </div>
     );
   } else {
     sessionLinks = (
-      <>
+      <div className="session-links">
         <DemoUser/>
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
-      </>
+      </div>
     );
   }
 
