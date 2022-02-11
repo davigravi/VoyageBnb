@@ -1,0 +1,23 @@
+.session-links > *{
+    margin-left: 22px;
+    font-size: 15px;
+}
+
+
+.nav-bar-container > li{
+    display:flex;
+    flex-direction: row;
+    justify-content: right;
+    justify-content: space-between;
+    width: 80%;
+    margin:0 auto;
+    border-bottom: solid 2px black;
+    padding-bottom:12px;
+    box-shadow: 0px 2px  black;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    background-color: white;
+    z-index: 99;
+}
