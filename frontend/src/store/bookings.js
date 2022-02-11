@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const LOAD = 'bookings/LOAD';
 const ADD_ONE = "bookings/ADD_ONE";
+const DELETE_ONE = "bookings/DELETE_ONE"
 
 const load = (bookings) =>({
     type: LOAD,
@@ -11,6 +12,11 @@ const load = (bookings) =>({
 const addBooking = (booking) => ({
     type: ADD_ONE,
     booking,
+});
+
+const deleteBooking = (id) => ({
+    type: DELETE_ONE,
+    id,
 })
 
 export const loadBookings = (userId) => async dispatch =>{
@@ -38,6 +44,19 @@ export const createBooking = (payload, userId) => async dispatch => {
     }
 };
 
+export const removeBooking = (bookingId, userId) => async dispatch => {
+    console.log("second")
+    const response = await csrfFetch(`/api/bookings/${userId}/${bookingId}`, {
+        method: 'DELETE',
+    })
+
+    if (response.ok){
+        const id = await response.json();
+        dispatch(deleteBooking(+id));
+        return id;
+    }
+}
+
 const initialState = {
     bookings: [],
 };
@@ -61,6 +80,13 @@ const bookingsReducer = (state = initialState, action)=> {
                 ...state,
                 [action.booking.id]: action.booking,
             };
+        }
+        case DELETE_ONE: {
+            const newState = {...state}
+            const newBookings = newState.bookings.filter(booking => booking.id !== action.id)
+            newState.bookings = newBookings;
+            delete newState[action.id];
+            return newState;
         }
         default:
             return state;

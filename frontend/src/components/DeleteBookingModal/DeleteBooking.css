@@ -1,0 +1,15 @@
+.delete-booking-modal-container{
+    display:flex;
+    flex-direction: column;
+    width: 450px;
+    align-items: center;
+}
+
+
+.delete-booking-modal-buttons{
+    display: flex;
+}
+
+.delete-booking-modal-buttons > button{
+    margin: 10px 8px;
+}

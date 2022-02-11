@@ -18,4 +18,19 @@ router.post("/:userId", asyncHandler(async function (req, res) {
     return res.json(newBooking);
 }));
 
+
+router.delete("/:userId/:bookingId", asyncHandler(async function (req,res){
+    console.log("checkpoing")
+    const bookingId = req.params.bookingId;
+
+    const booking = await db.Booking.findByPk(bookingId);
+
+    if(!booking){
+        throw new Error('Unable to delete booking')
+    }
+
+    await booking.destroy();
+
+    return res.json(bookingId);
+}));
 module.exports = router;

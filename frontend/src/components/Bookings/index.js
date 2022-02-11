@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadBookings } from "../../store/bookings";
 import {loadListings} from "../../store/listings";
 import './Bookings.css';
+import DeleteBookingModal from "../DeleteBookingModal";
 
 function Bookings () {
     const dispatch = useDispatch();
@@ -58,7 +59,14 @@ function Bookings () {
                         </div>
                         <div className="date-label"> Date</div>
                         <div className="date-box">
-                            <li>{booking.startDate}</li>
+                            <li>{new Date(booking.startDate).toDateString()}</li>
+                            {/* {console.log(booking.startDate, "booking startDate")}
+                            {console.log(new Date(booking.startDate).toDateString())} */}
+                        </div>
+                        <div>
+                            <div>
+                                <DeleteBookingModal id={booking.id}/>
+                            </div>
                         </div>
                     </ul>
 
