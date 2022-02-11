@@ -55,13 +55,13 @@ function Bookings () {
                         </div>
                         <div className="price-label"> Amount</div>
                         <div className="price-box">
-                            <li>${booking.pricePerNight}</li>
+                            {/* <li>${booking.pricePerNight}.00</li> */}
+                            <li>${((new Date(booking.startDate)-new Date(booking.endDate))/-(1000 * 60 * 60 * 24))*(booking.pricePerNight)}</li>
                         </div>
-                        <div className="date-label"> Date</div>
+                        <div className="date-label"> Itinerary</div>
                         <div className="date-box">
-                            <li>{new Date(booking.startDate).toDateString()}</li>
-                            {/* {console.log(booking.startDate, "booking startDate")}
-                            {console.log(new Date(booking.startDate).toDateString())} */}
+                            <li>Check-in: {new Date(booking.startDate).toDateString()}</li>
+                            <li>Check-out: {new Date(booking.endDate).toDateString()}</li>
                         </div>
                         <div>
                             <div>
