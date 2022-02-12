@@ -43,7 +43,7 @@ function Bookings () {
                 {bookings.map((booking)=>
                 <div className="bookings-content" key={booking.id} id={booking.id}>
                     <h3>Your reservation is confirmed. You're going to {booking.city}.</h3>
-                    <h3>{booking.name}</h3>
+                    <h3 className="bookings-name-header">{booking.name}</h3>
                     <img className="listings-page-img" src={`${booking.url}`}></img>
                     <ul>
                         <div className="location-label">Address</div>

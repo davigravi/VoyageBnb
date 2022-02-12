@@ -1,0 +1,54 @@
+.landing-page{
+    display:flex;
+    justify-content: center;
+    padding-top: 350px;
+    background-image:url(../../../public/images/beach.jpg);
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width:80%;
+    z-index: -1;
+}
+
+.landing-page > div{
+    height: 100vh;
+}
+
+.landing-page-h1{
+    color:white;
+    font-size: 80px;
+
+
+
+    animation: fadeIn 4s;
+    -webkit-animation: fadeIn 4s;
+    -moz-animation: fadeIn 4s;
+    -o-animation: fadeIn 4s;
+    -ms-animation: fadeIn 4s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

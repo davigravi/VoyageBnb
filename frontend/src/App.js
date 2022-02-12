@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Listings from "./components/Listings";
 import HostFormPage from "./components/HostFormPage";
 import Bookings from "./components/Bookings";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path exact="/">
+            <LandingPage/>
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
