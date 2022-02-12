@@ -1,11 +1,11 @@
 
-![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/favicon.png "Favicon")
+![alt text](https://github.com/davigravi/VoyageBnb/blob/main/frontend/public/images/favicon.jpg "Favicon")
 
 # **VoyageBnb**
 
-[RoomHawk](https://room-hawk.herokuapp.com/), a full-stack application inspired by Airbnb, is an online platform for users to host and rent out spots for travel.
+[VoyageBnb](https://voyage-bnb.herokuapp.com/), a full-stack application inspired by Airbnb, is an online platform for users to host and rent out spots for travel.
 
-Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more information.
+Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more information.
 
 ## **Live Link**
 
@@ -23,7 +23,7 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 
 **Get Started**
 
-* Clone the repository: `https://github.com/davigravi/RoomHawk.git`
+* Clone the repository: `https://github.com/davigravi/VoyageBnb.git`
 
 * Run `npm install` to install dependencies
 
@@ -67,5 +67,5 @@ Visit its [wiki](https://github.com/davigravi/RoomHawk/wiki) for more informatio
 ## **Documentation**
 
 
-* [Feature List](https://github.com/davigravi/RoomHawk/wiki/Feature-List)
-* [Database Schema](https://github.com/davigravi/RoomHawk/wiki/Database-Schema)
+* [Feature List](https://github.com/davigravi/VoyageBnb/wiki/Feature-List)
+* [Database Schema](https://github.com/davigravi/VoyageBnb/wiki/Database-Schema)
