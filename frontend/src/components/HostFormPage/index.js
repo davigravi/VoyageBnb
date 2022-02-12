@@ -50,11 +50,11 @@ function HostFormPage(){
 
     return (
         <form onSubmit={handleSubmit}>
-            <ul className="host-errors">
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
             <div className="host-form-container">
-                <h1 className="host-form-header">Tell Us About Your Place</h1>
+                <ul className="host-errors">
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <h2 className="host-form-header">Tell Us About Your Place</h2>
                 <label>
                     <input
                     type="text"
@@ -127,7 +127,7 @@ function HostFormPage(){
                     required
                     />
                 </label>
-                <button type="submit">Host</button>
+                <button className="host-listing-button"type="submit">Host</button>
             </div>
         </form>
     )

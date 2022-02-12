@@ -7,14 +7,17 @@
     width: 80%;
     margin:0 auto;
     text-align: center;
-    border: 2px solid black;
+    border-bottom: .5px solid rgb(182, 181, 181);
+    /* border: 2px solid black; */
     padding-bottom: 15px;
 }
 
 
 .description-box{
     width:35%;
-    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left:auto;
     border: 2px black solid;
     position: relative;
     right: 19px;
@@ -25,7 +28,9 @@
 .location-box{
     border: 2px black solid;
     width:35%;
-    margin:0 auto;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left:auto;
     position: relative;
     right: 19px;
 }
@@ -61,19 +66,41 @@ ul{
 .listings-buttons-box{
     position: relative;
     right: 19px;
-    padding-top:15px;
+    padding-top:7px;
 
 }
 
 .book-button{
     margin-right: 10px;
+    border-radius: 11px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .edit-button{
     margin-left: 10px;
+    border-radius: 11px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .listings > h2{
     text-align: center;
-    padding-top: 60px;
+    padding-top: 90px;
+}
+
+.listings-delete-button{
+    border-radius: 11px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.listing-content > h3{
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

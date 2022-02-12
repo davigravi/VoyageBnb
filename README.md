@@ -1,5 +1,5 @@
 
-![alt text](https://github.com/davigravi/VoyageBnb/blob/main/frontend/public/images/favicon.jpg "Favicon")
+![alt text](frontend/public/images/favicon.jpg "Favicon")
 
 # **VoyageBnb**
 
@@ -9,7 +9,7 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 ## **Live Link**
 
-[RoomHawk](https://room-hawk.herokuapp.com/)
+[VoyageBnb](https://voyage-bnb.herokuapp.com/)
 
 ## **Installation**
 
@@ -23,7 +23,7 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 **Get Started**
 
-* Clone the repository: `https://github.com/davigravi/VoyageBnb.git`
+* Clone the repository: `https://github.com/davigravi/VoyageBnb`
 
 * Run `npm install` to install dependencies
 
@@ -47,11 +47,17 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 ![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/readme1.png "View Listings")
 
-* Spots
-    * Users can post listings via a form.
-    * Users can view other people's listings.
-    * Users can delete their listings.
-    * Users can edit their listings.
+* Listings
+    * Logged in users can view listings uploaded by others.
+    * Logged in users can post listings via a form.
+    * Logged in users can edit their listing information.
+    * Logged in users can delete their listings.
+
+* Bookings
+    * Logged in users can view their personal bookings.
+    * Logged in users can create a booking via a form.
+    * Logged in users can delete their bookings.
+
 
 ## **Technologies**
 
@@ -67,5 +73,5 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 ## **Documentation**
 
 
-* [Feature List](https://github.com/davigravi/VoyageBnb/wiki/Feature-List)
-* [Database Schema](https://github.com/davigravi/VoyageBnb/wiki/Database-Schema)
+* [Feature List](https://github.com/davigravi/VoyageBnb/wiki/Database-Schema)
+* [Database Schema](https://github.com/davigravi/VoyageBnb/wiki/Feature-List)

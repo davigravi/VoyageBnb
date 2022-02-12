@@ -5,3 +5,10 @@
     right: 19px;
     padding-top:15px;
 }
+
+.delete-booking-button{
+    border-radius: 11px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
+}

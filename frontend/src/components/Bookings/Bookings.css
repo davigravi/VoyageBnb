@@ -8,14 +8,23 @@
     width: 80%;
     margin:0 auto;
     text-align: center;
-    border: 2px solid black;
+    border-bottom: .5px solid rgb(182, 181, 181);
+    /* border: 2px solid black; */
     padding-bottom: 15px;
+}
+
+.price-box{
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left:auto;
 }
 
 .date-box{
     border: 2px black solid;
     width:35%;
-    margin:0 auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left:auto;
     position: relative;
     right: 19px;
 }
@@ -27,5 +36,5 @@
 
 .bookings > h2{
     text-align: center;
-    padding-top: 60px;
+    padding-top: 90px;
 }

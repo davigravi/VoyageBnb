@@ -12,4 +12,8 @@
 
 .delete-booking-modal-buttons > button{
     margin: 10px 8px;
+    border-radius: 11px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
 }

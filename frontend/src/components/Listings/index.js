@@ -50,7 +50,7 @@ function Listings () {
                             <div className="listings-buttons-box">
                                 {/* <button className="book-button">Book</button> */}
                                 <BookFormModal id={listing.id}/>
-                                <button value={listing.id} onClick={handleDelete}>Delete</button>
+                                <button className="listings-delete-button" value={listing.id} onClick={handleDelete}>Delete</button>
                                 <EditFormModal id={listing.id}/>
                             </div>
                         </div>
