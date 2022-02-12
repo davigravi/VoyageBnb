@@ -23,7 +23,7 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 **Get Started**
 
-* Clone the repository: `https://github.com/davigravi/VoyageBnb`
+* Clone the repository: `https://github.com/davigravi/VoyageBnb.git`
 
 * Run `npm install` to install dependencies
 
@@ -45,13 +45,14 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 * Account Regristration and Sign-in
 
-![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/readme1.png "View Listings")
-
 * Listings
     * Logged in users can view listings uploaded by others.
     * Logged in users can post listings via a form.
     * Logged in users can edit their listing information.
     * Logged in users can delete their listings.
+    
+![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/readme1.png "View Listings")
+
 
 * Bookings
     * Logged in users can view their personal bookings.
