@@ -2,3 +2,12 @@
     position:relative;
     right:19px;
 }
+
+.second-book-button,
+.second-cancel-button{
+    border-radius: 4px;
+}
+
+.edit-form-container>button{
+    border-radius: 4px;;
+}

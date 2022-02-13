@@ -1,0 +1,8 @@
+.book-button{
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    padding: 4px 8px;
+    color:white;
+    background-color: #f64900;
+    font-weight:bold;
+}

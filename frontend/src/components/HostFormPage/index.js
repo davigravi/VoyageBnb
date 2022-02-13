@@ -102,7 +102,7 @@ function HostFormPage(){
                 </label>
                     <textarea
                     rows="5"
-                    cols="38"
+                    cols="45"
                     placeholder="Description"
                     value={description}
                     onChange={(e)=> setDescription(e.target.value)}

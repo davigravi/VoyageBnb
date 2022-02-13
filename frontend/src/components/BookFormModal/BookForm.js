@@ -95,7 +95,7 @@ function BookForm ({id, hideForm}){
     return (
         <form onSubmit={handleSubmit}>
             <div className="edit-form-container">
-                <h1>Make Your Reservation</h1>
+                <h1 className="make-your-reservation">Make Your Reservation</h1>
                 <ul className="e-errors-booking">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
@@ -116,8 +116,8 @@ function BookForm ({id, hideForm}){
                         onChange={(e)=>setEndDate(e.target.value)}
                     />
                 </label>
-                <button type="submit">Book</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <button className="second-book-button"type="submit">Book</button>
+                <button className="second-cancel-button" type="button" onClick={handleCancelClick}>Cancel</button>
             </div>
         </form>
     )

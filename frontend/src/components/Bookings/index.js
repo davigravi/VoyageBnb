@@ -56,7 +56,7 @@ function Bookings () {
                         <div className="price-label"> Amount</div>
                         <div className="price-box">
                             {/* <li>${booking.pricePerNight}.00</li> */}
-                            <li>${((new Date(booking.startDate)-new Date(booking.endDate))/-(1000 * 60 * 60 * 24))*(booking.pricePerNight)}</li>
+                            <li>${((new Date(booking.startDate)-new Date(booking.endDate))/-(1000 * 60 * 60 * 24))*(booking.pricePerNight)}.00</li>
                         </div>
                         <div className="date-label"> Itinerary</div>
                         <div className="date-box">

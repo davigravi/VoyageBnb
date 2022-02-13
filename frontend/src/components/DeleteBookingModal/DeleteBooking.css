@@ -5,6 +5,9 @@
     align-items: center;
 }
 
+.delete-booking-modal-container>h2{
+    color:#008294;
+}
 
 .delete-booking-modal-buttons{
     display: flex;
@@ -12,8 +15,9 @@
 
 .delete-booking-modal-buttons > button{
     margin: 10px 8px;
-    border-radius: 11px;
-    border: 1.5px solid black;
+    border-radius: 4px;
+    /* border: 1.5px solid black; */
     padding: 4px 8px;
     background-color: white;
+    font-weight:bold;
 }

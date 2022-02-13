@@ -1,7 +1,7 @@
 .landing-page{
     display:flex;
     justify-content: center;
-    padding-top: 350px;
+    padding-top: 220px;
     background-image:url(../../../public/images/beach.jpg);
     background-size: cover;
     transform: translate(-50%, -50%);

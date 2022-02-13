@@ -27,6 +27,7 @@
     margin-left:auto;
     position: relative;
     right: 19px;
+    color:#4b587c;
 }
 
 .date-label{
@@ -37,6 +38,7 @@
 .bookings > h2{
     text-align: center;
     padding-top: 90px;
+    color:#008294;
 }
 
 .bookings-name-header{

@@ -1,0 +1,8 @@
+.logout-button{
+    border-radius: 4px;
+    border: 1.5px solid black;
+    padding: 4px 8px;
+    background-color: white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+}
