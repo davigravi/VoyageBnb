@@ -10,7 +10,7 @@ function Bookings () {
     const bookings = useSelector(state=>state.bookings.bookings);
     // const listings = useSelector(state=>state.listings.list);
     const sessionUser = useSelector(state => state.session.user);
-    console.log(sessionUser.id)
+    console.log(sessionUser.firstName)
     // const myBookings = bookings.filter(booking=> booking.userId === sessionUser.id)
 
 
@@ -38,41 +38,45 @@ function Bookings () {
 
     return (
         <div className="bookings">
-            <h2>My Bookings</h2>
-            <div className="bookings-container">
-                {bookings.map((booking)=>
-                <div className="bookings-content" key={booking.id} id={booking.id}>
-                    <h3>Your reservation is confirmed. You're going to {booking.city}.</h3>
-                    <h3 className="bookings-name-header">{booking.name}</h3>
-                    <img className="listings-page-img" src={`${booking.url}`}></img>
-                    <ul>
-                        <div className="location-label">Address</div>
-                        <div className="location-box">
-                            <li>{booking.address}</li>
-                            <li>{booking.city}</li>
-                            <li>{booking.state}</li>
-                            <li>{booking.zipcode}</li>
-                        </div>
-                        <div className="price-label"> Amount</div>
-                        <div className="price-box">
-                            {/* <li>${booking.pricePerNight}.00</li> */}
-                            <li>${((new Date(booking.startDate)-new Date(booking.endDate))/-(1000 * 60 * 60 * 24))*(booking.pricePerNight)}.00</li>
-                        </div>
-                        <div className="date-label"> Itinerary</div>
-                        <div className="date-box">
-                            <li>Check-in: {new Date(booking.startDate).toDateString()}</li>
-                            <li>Check-out: {new Date(booking.endDate).toDateString()}</li>
-                        </div>
-                        <div>
-                            <div>
-                                <DeleteBookingModal id={booking.id}/>
+            { sessionUser.firstName === "Hello" || (sessionUser)  ?
+            <>
+                <h2>My Bookings</h2>
+                <div className="bookings-container">
+                    {bookings.map((booking)=>
+                    <div className="bookings-content" key={booking.id} id={booking.id}>
+                        <h3>Your reservation is confirmed. You're going to {booking.city}.</h3>
+                        <h3 className="bookings-name-header">{booking.name}</h3>
+                        <img className="listings-page-img" src={`${booking.url}`}></img>
+                        <ul>
+                            <div className="location-label">Address</div>
+                            <div className="location-box">
+                                <li>{booking.address}</li>
+                                <li>{booking.city}</li>
+                                <li>{booking.state}</li>
+                                <li>{booking.zipcode}</li>
                             </div>
-                        </div>
-                    </ul>
+                            <div className="price-label"> Amount</div>
+                            <div className="price-box">
+                                {/* <li>${booking.pricePerNight}.00</li> */}
+                                <li>${((new Date(booking.startDate)-new Date(booking.endDate))/-(1000 * 60 * 60 * 24))*(booking.pricePerNight)}.00</li>
+                            </div>
+                            <div className="date-label"> Itinerary</div>
+                            <div className="date-box">
+                                <li>Check-in: {new Date(booking.startDate).toDateString()}</li>
+                                <li>Check-out: {new Date(booking.endDate).toDateString()}</li>
+                            </div>
+                            <div>
+                                <div>
+                                    <DeleteBookingModal id={booking.id}/>
+                                </div>
+                            </div>
+                        </ul>
 
+                    </div>
+                    )}
                 </div>
-                )}
-            </div>
+            </> : null
+            }
         </div>
     )
 
