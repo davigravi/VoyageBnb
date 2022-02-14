@@ -25,11 +25,12 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
 * Clone the repository: `https://github.com/davigravi/VoyageBnb.git`
 
-* Run `npm install` to install dependencies
+* `cd VoyageBnb` and run `npm install` to install dependencies
 
-* Create a Postgres database called `auth_db`
+* Create a .env file based on the example with proper settings for your development environment
 
-* Create a `.env` file in the root directory, following `.env.example` as a reference.
+* Setup a PostgresSQL database, user, and password and check to see they match your .env file.
+
 
 * Initialize the database:
 
@@ -37,7 +38,7 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
 
     * `npx dotenv sequelize db:seed:all`
 
-    * Run `npm start` to launch the server.
+    * Open two separate terminals and run `npm start` in the frontend folder and backend folder to launch the server.
 
 ## **Features**
 
@@ -50,8 +51,6 @@ Visit its [wiki](https://github.com/davigravi/VoyageBnb/wiki) for more informati
     * Logged in users can post listings via a form.
     * Logged in users can edit their listing information.
     * Logged in users can delete their listings.
-    
-![alt text](https://github.com/davigravi/RoomHawk/blob/main/frontend/public/images/readme1.png "View Listings")
 
 
 * Bookings
