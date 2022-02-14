@@ -71,6 +71,7 @@ function HostFormPage() {
     return (
         <form onSubmit={handleSubmit}>
             <div className="host-form-container">
+
                 <ul className="host-errors">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
@@ -148,6 +149,7 @@ function HostFormPage() {
                     />
                 </label>
                 <button className="host-listing-button" type="submit">Host</button>
+
             </div>
         </form>
     )

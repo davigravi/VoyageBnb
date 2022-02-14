@@ -23,6 +23,7 @@
 }
 
 
+
 .nav-bar-container > li{
     display:flex;
     flex-direction: row;
@@ -38,6 +39,6 @@
     top:0;
     right:0;
     left:0;
-    background-color: white;
+    background-color: #e3dac9;
     z-index: 99;
 }

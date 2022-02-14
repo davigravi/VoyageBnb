@@ -1,10 +1,19 @@
 .e-errors-booking{
     position:relative;
     right:19px;
+    color:red;
 }
 
 .make-your-reservation{
     color:#008294;
+}
+
+.edit-form-container{
+    background-color: #e3dac9;
+}
+
+.modal-content{
+    background-color: #e3dac9;
 }
 
 .edit-form-container > label{
