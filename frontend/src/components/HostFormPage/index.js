@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './HostFormPage.css'
 import { useHistory } from "react-router-dom";
 import { createListing } from "../../store/listings";
@@ -27,6 +27,8 @@ function HostFormPage(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
+
         const payload = {
             userId: sessionUser.id,
             name,
@@ -47,6 +49,16 @@ function HostFormPage(){
 
 
     }
+
+
+    // useEffect(()=>{
+    //     const formErrors = [];
+
+    //     if(name.length<2) formErrors.push("Name must be more than 1 character")
+    //     if(pricePerNight === 0) formErrors.push("Price must be greater than 0")
+
+    //     setErrors(formErrors);
+    // }, [name, pricePerNight])
 
     return (
         <form onSubmit={handleSubmit}>
