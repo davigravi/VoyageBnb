@@ -41,4 +41,6 @@ textarea{
 
 .host-errors{
     color:red;
+    position: relative;
+    right: 19px;
 }

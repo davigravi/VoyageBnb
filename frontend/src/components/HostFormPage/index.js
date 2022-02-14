@@ -24,7 +24,35 @@ function HostFormPage() {
     const [url, setUrl] = useState("");
     const [errors, setErrors] = useState([]);
 
-    const value = false;
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+
+    //     const payload = {
+    //         userId: sessionUser.id,
+    //         name,
+    //         address,
+    //         city,
+    //         state,
+    //         zipcode,
+    //         description,
+    //         pricePerNight,
+    //         url,
+    //     }
+
+    //     let newListing = await dispatch(createListing(payload));
+
+    //     if (newListing) {
+    //         history.push("/listings")
+    //     }
+
+
+
+
+
+
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,7 +70,12 @@ function HostFormPage() {
             url,
         }
 
-        let newListing = await dispatch(createListing(payload));
+        setErrors([])
+        let newListing = await dispatch(createListing(payload))
+        .catch(async(res)=>{
+            const data = await res.json();
+            if(data && data.errors) return setErrors(data.errors)
+        })
 
         if (newListing) {
             history.push("/listings")
@@ -56,17 +89,6 @@ function HostFormPage() {
     }
 
 
-
-    // useEffect(()=>{
-    //     const formErrors = [];
-
-    //     if(name==="" && address==="") setErrors([])
-
-    //     if(name.length<2) formErrors.push("Name must be more than 1 character")
-    //     if(pricePerNight === 0) formErrors.push("Price must be greater than 0")
-
-    //     setErrors(formErrors);
-    // }, [name, pricePerNight])
 
     return (
         <form onSubmit={handleSubmit}>

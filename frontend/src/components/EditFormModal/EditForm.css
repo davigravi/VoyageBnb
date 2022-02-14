@@ -41,3 +41,9 @@
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:bold;
 }
+
+.e-errors-edit-modal{
+    position: relative;
+    right: 19px;
+    color:red;
+}

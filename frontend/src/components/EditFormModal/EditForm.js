@@ -50,7 +50,12 @@ function EditForm({id, hideForm}) {
             url,
         }
 
+        setErrors([]);
         let updatedListing = await dispatch(updateListing(payload,propId))
+        .catch(async(res)=>{
+            const data = await res.json();
+            if(data && data.errors) return setErrors(data.errors)
+        })
         if(updatedListing){
             hideForm();
         }
@@ -68,7 +73,7 @@ function EditForm({id, hideForm}) {
         <form onSubmit={handleSubmit}>
             <div className="edit-form-container">
                 <h1>Update Your Listing</h1>
-                <ul className="e-errors">
+                <ul className="e-errors-edit-modal">
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <label>
