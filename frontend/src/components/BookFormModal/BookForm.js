@@ -46,6 +46,20 @@ function BookForm ({id, hideForm}){
         return goodDate;
     }
 
+    // const getMinDate= () => {
+    //     const today = new Date();
+    //     const month = today.getMonth() + 1;
+    //     const year = today.getUTCFullYear();
+    //     const date = today.getDate();
+
+    //     const minDate = year + "-" + month + "-" + date;
+    //     console.log(minDate.toString(), "minDate")
+    //     return minDate.toString();
+    // }
+
+
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
