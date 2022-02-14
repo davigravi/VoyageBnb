@@ -6,3 +6,13 @@
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:bold;
 }
+
+/* .profile-dropdown{
+    display:flex;
+    flex-direction: column;
+}
+
+.profile-dropdown > li {
+    justify-content: right;
+
+} */

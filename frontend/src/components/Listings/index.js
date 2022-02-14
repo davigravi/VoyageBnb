@@ -13,6 +13,7 @@ function Listings () {
 
     // const listings = useSelector(state=>state.listings.list);
     const listings = useSelector(state=>state.listings.list);
+    const sessionUser = useSelector(state => state.session.user);
 
     const handleDelete = async (e) =>{
         // const id = e.target.value
@@ -49,9 +50,16 @@ function Listings () {
                         <div className="listings-buttons-container">
                             <div className="listings-buttons-box">
                                 {/* <button className="book-button">Book</button> */}
+                                
                                 <BookFormModal id={listing.id}/>
-                                <button className="listings-delete-button" value={listing.id} onClick={handleDelete}>Delete</button>
-                                <EditFormModal id={listing.id}/>
+                                {sessionUser.id === listing.userId ?   <button className="listings-delete-button" value={listing.id} onClick={handleDelete}>Delete</button> : null }
+                                {sessionUser.id === listing.userId ?   <EditFormModal id={listing.id}/> : null }
+                                {sessionUser.firstName === "Hello" ?   <button className="listings-delete-button" value={listing.id} onClick={handleDelete}>Delete</button> : null }
+                                {sessionUser.lastName === "World" ?   <EditFormModal id={listing.id}/> : null }
+
+
+                                {/* <button className="listings-delete-button" value={listing.id} onClick={handleDelete}>Delete</button>
+                                <EditFormModal id={listing.id}/> */}
                             </div>
                         </div>
                     </ul>
