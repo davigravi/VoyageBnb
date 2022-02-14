@@ -10,7 +10,7 @@ function Bookings () {
     const bookings = useSelector(state=>state.bookings.bookings);
     // const listings = useSelector(state=>state.listings.list);
     const sessionUser = useSelector(state => state.session.user);
-   
+
     // const myBookings = bookings.filter(booking=> booking.userId === sessionUser.id)
 
 
@@ -62,8 +62,8 @@ function Bookings () {
                             </div>
                             <div className="date-label"> Itinerary</div>
                             <div className="date-box">
-                                <li>Check-in: {new Date(booking.startDate).toDateString()}</li>
-                                <li>Check-out: {new Date(booking.endDate).toDateString()}</li>
+                                <li>Check-in: {new Date(booking.startDate).getUTCMonth()+1}/{new Date(booking.startDate).getUTCDate()}/{new Date(booking.startDate).getUTCFullYear()}</li>
+                                <li>Check-in: {new Date(booking.endDate).getUTCMonth()+1}/{new Date(booking.endDate).getUTCDate()}/{new Date(booking.endDate).getUTCFullYear()}</li>
                             </div>
                             <div>
                                 <div>
