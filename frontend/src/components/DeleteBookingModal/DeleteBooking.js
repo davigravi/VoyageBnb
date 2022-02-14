@@ -15,7 +15,7 @@ function DeleteBooking ({id, hideForm}){
 
     const handleYesClick = async (e) =>{
         e.preventDefault();
-        console.log("first")
+       
         dispatch(removeBooking(bookingId, sessionUser.id))
     }
 

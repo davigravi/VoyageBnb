@@ -10,7 +10,7 @@ function Bookings () {
     const bookings = useSelector(state=>state.bookings.bookings);
     // const listings = useSelector(state=>state.listings.list);
     const sessionUser = useSelector(state => state.session.user);
-    console.log(sessionUser.firstName)
+   
     // const myBookings = bookings.filter(booking=> booking.userId === sessionUser.id)
 
 

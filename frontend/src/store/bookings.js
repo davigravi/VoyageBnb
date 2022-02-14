@@ -30,7 +30,7 @@ export const loadBookings = (userId) => async dispatch =>{
 };
 
 export const createBooking = (payload, userId) => async dispatch => {
-    console.log("here")
+
     const response = await csrfFetch(`/api/bookings/${userId}`, {
         method:`POST`,
         headers: {'Content-Type': 'application/json'},
@@ -45,7 +45,7 @@ export const createBooking = (payload, userId) => async dispatch => {
 };
 
 export const removeBooking = (bookingId, userId) => async dispatch => {
-    console.log("second")
+   
     const response = await csrfFetch(`/api/bookings/${userId}/${bookingId}`, {
         method: 'DELETE',
     })

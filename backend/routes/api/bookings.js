@@ -6,9 +6,13 @@ const db = require('../../db/models');
 const router = express.Router();
 
 router.get('/:userId', asyncHandler(async function (req, res) {
-    console.log("checkpoint in backend")
+
+    if(req.params.userId > 3){
+        const bookings = await db.Booking.findAll();
+        return res.json(bookings)
+    }
     const bookings = await db.Booking.findAll({where: {userId: req.params.userId}});
-    console.log(bookings)
+
     return res.json(bookings);
 })
 );
@@ -20,7 +24,7 @@ router.post("/:userId", asyncHandler(async function (req, res) {
 
 
 router.delete("/:userId/:bookingId", asyncHandler(async function (req,res){
-    console.log("checkpoing")
+  
     const bookingId = req.params.bookingId;
 
     const booking = await db.Booking.findByPk(bookingId);
