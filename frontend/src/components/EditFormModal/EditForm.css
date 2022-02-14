@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.edit-form-container> h1{
+    color:#008294;
+}
+
 .edit-form-container > label{
     color:red;
     display:flex;
@@ -12,12 +16,28 @@
     flex-direction: column;
 }
 
-.edit-form-container > button{
-    margin-bottom: 10px;
-    margin-top: 5px;
-    border-radius: 11px;
-    border: 1.5px solid black;
+
+
+.edit-form-second-yes{
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    /* border:none; */
     padding: 4px 8px;
+    margin: 10px 8px;
+    background-color: #f64900;
+    color:white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+}
+
+.edit-form-second-no{
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    /* border:none; */
+    padding: 4px 8px;
+    margin: 10px 8px;
     background-color: white;
+    color:black;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:bold;
 }

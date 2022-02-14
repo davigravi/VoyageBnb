@@ -1,6 +1,8 @@
 .listings-container{
     display:flex;
     flex-direction: column;
+
+
 }
 
 .listing-content{
@@ -86,12 +88,13 @@ ul{
 
 .edit-button{
     margin-left: 10px;
-    border-radius: 11px;
-    border: 1.5px solid black;
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    color:black;
     padding: 4px 8px;
-    background-color: white;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:bold;
+    background-color: white;
 }
 
 .listings > h2{
@@ -102,9 +105,11 @@ ul{
 
 .listings-delete-button{
     border-radius: 4px;
-    border: 1.5px solid black;
+    border: 1.5px solid #f64900;
+    /* border:none; */
     padding: 4px 8px;
     background-color: white;
+    color:black;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:bold;
 }

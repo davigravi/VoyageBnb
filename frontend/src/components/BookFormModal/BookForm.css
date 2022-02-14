@@ -3,11 +3,36 @@
     right:19px;
 }
 
-.second-book-button,
-.second-cancel-button{
-    border-radius: 4px;
+.make-your-reservation{
+    color:#008294;
 }
 
-.edit-form-container>button{
-    border-radius: 4px;;
+.edit-form-container > label{
+    color:#008294;
+}
+
+
+.second-book-button{
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    /* border:none; */
+    padding: 4px 8px;
+    background-color: #f64900;
+    color:white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    margin-bottom: 10px;
+
+}
+
+.second-cancel-button{
+    border-radius: 4px;
+    border: 1.5px solid #f64900;
+    /* border:none; */
+    padding: 4px 8px;
+    background-color: white;
+    color:black;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+
 }

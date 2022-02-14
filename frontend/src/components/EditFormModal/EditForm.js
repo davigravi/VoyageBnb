@@ -148,8 +148,8 @@ function EditForm({id, hideForm}) {
                         required
                     />
                 </label>
-                <button type="submit">Update Listing</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <button className="edit-form-second-yes" type="submit">Update Listing</button>
+                <button className="edit-form-second-no" type="button" onClick={handleCancelClick}>Cancel</button>
             </div>
 
         </form>

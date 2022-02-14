@@ -29,8 +29,8 @@ function DeleteBooking ({id, hideForm}){
         <div className="delete-booking-modal-container">
             <h2>Are you sure you want to cancel?</h2>
             <div className="delete-booking-modal-buttons">
-                <button type="button" onClick={handleYesClick}>Yes</button>
-                <button type="button" onClick={handleNoClick}>No</button>
+                <button className="yes-delete-booking-modal" type="button" onClick={handleYesClick}>Yes</button>
+                <button className="no-delete-booking-modal" type="button" onClick={handleNoClick}>No</button>
             </div>
 
         </div>
