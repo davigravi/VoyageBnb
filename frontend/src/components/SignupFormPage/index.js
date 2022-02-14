@@ -36,7 +36,7 @@ function SignupFormPage() {
       <div className="sign-up-container">
         <h2>Sign Up</h2>
         <p>Already a member? <NavLink className="signup-p"to="/login">Log in</NavLink></p>
-        <ul>
+        <ul className="signup-errors">
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>

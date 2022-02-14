@@ -9,10 +9,10 @@
     color:#008294;
 }
 
-.sign-up-container>ul{
+.signup-errors{
     color:red;
     position: relative;
-    right: 19px;
+    right: -19px;
 }
 
 .sign-up-form-button{
