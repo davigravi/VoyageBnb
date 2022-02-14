@@ -20,6 +20,7 @@ const deleteBooking = (id) => ({
 })
 
 export const loadBookings = (userId) => async dispatch =>{
+    
     const response = await csrfFetch(`/api/bookings/${userId}`);
 
     if (response.ok){
@@ -45,7 +46,7 @@ export const createBooking = (payload, userId) => async dispatch => {
 };
 
 export const removeBooking = (bookingId, userId) => async dispatch => {
-   
+
     const response = await csrfFetch(`/api/bookings/${userId}/${bookingId}`, {
         method: 'DELETE',
     })

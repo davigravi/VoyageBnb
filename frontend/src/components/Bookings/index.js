@@ -31,6 +31,7 @@ function Bookings () {
 
 
     useEffect(()=>{
+        console.log("here")
         dispatch(loadBookings(sessionUser.id));
     }, [dispatch])
 
