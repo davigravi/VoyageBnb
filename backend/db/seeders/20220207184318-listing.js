@@ -46,6 +46,19 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          userId: 1,
+          name: "Newly Built Condo by the Galleria" ,
+          address:"23458 Nashville Street",
+          city: "San Antonio",
+          state: "Texas",
+          zipcode: "77123",
+          description: "This place comes with a huge outdoor patio and swimming pool, a movie theatre, and aracde room. Very spacious and is located close to restaurants.",
+          pricePerNight: 260,
+          url: "https://i.ibb.co/YyRp2HQ/house-5.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
